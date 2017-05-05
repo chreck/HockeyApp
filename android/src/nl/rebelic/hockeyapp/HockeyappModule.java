@@ -47,7 +47,6 @@ public class HockeyappModule extends KrollModule
 	public static void onAppCreate(TiApplication app)
 	{
 		Log.d(TAG, "inside onAppCreate");
-		// put module init code that needs to run when the application is created
 	}
 
 	@Override
@@ -64,6 +63,9 @@ public class HockeyappModule extends KrollModule
     public void start(String appId)
     {
         this.appId = appId;
+        
+	checkForCrashes();
+	checkForUpdates();
     }
     
     private void checkForCrashes() {
